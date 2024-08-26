@@ -1,0 +1,85 @@
+1. Write a program to read Celsius temperature and print equivalent Fahrenheit temperature on screen using R.
+Ans.
+celsius <- as.numeric(readline(prompt = "Enter temperature in Celsius: "))
+fahrenheit <- (celsius * 9/5) + 32
+cat("The equivalent temperature in Fahrenheit is:", fahrenheit)
+
+2. Read radius of the circle from user and find the area and perimeter of it using R.
+Ans.
+radius <- as.numeric(readline(prompt = "Enter the radius of the circle: "))
+area <- pi * radius^2
+perimeter <- 2 * pi * radius
+cat("The area of the circle is:", area)
+cat("The perimeter (circumference) of the circle is:", perimeter)
+
+3. Read the amount and percentage of interest from the keyboard and find final amount after adding interest in original amount using R.
+Ans.
+amount <- as.numeric(readline(prompt = "Enter the original amount: "))
+interest_rate <- as.numeric(readline(prompt = "Enter the percentage of interest: "))
+final_amount <- amount + ((amount * interest_rate) / 100)
+cat("The final amount after adding interest is:", final_amount)
+
+4. Write a program to read distance value in meters and convert it into centimeters, inches, and yards using R.
+Ans.
+meters <- as.numeric(readline(prompt = "Enter the distance in meters: "))
+centimeters <- meters * 100
+inches <- meters * 39.3701
+yards <- meters * 1.09361
+cat("Distance in centimeters:", centimeters)
+cat("Distance in inches:", inches)
+cat("Distance in yards:", yards)
+
+5. Write a program to input basic salary and find output of gross salary using
+following:
+DA = 75% of basic
+HRA = 20% of basic
+Conditions:
+Basic < 10000 : gross = da + basic
+Basic >= 10000 and < 20000 : gross = da + basic + 50% of hra
+Basic >= 20000 : gross = basic + da + hra
+
+Ans.
+calculate_gross_salary <- function(basic_salary) {
+  DA <- 0.75 * basic_salary
+  HRA <- 0.20 * basic_salary
+
+  if (basic_salary < 10000) {
+    gross_salary <- basic_salary + DA
+  } else if (basic_salary >= 10000 && basic_salary < 20000) {
+    gross_salary <- basic_salary + DA + 0.5 * HRA
+  } else {
+    gross_salary <- basic_salary + DA + HRA
+  }
+  return(gross_salary)
+}
+
+basic_salary <- as.numeric(readline(prompt = "Enter the basic salary: "))
+gross_salary <- calculate_gross_salary(basic_salary)
+cat("The gross salary is:", gross_salary)
+
+7. Write a program to read a number from user and find the factorial of the number using R.
+Ans.
+number <- as.numeric(readline(prompt = "Enter a number: "))
+cat("The factorial of", number, "is:", factorial(number))
+
+8. Write a program to read num1 and num2 from keyboard and find addition of all number between that range using R.
+Ans.
+num1 <- as.numeric(readline(prompt = "Enter the first number (num1): "))
+num2 <- as.numeric(readline(prompt = "Enter the second number (num2): "))
+numbers_sequence <- seq(num1, num2)
+cat("The sum of all numbers between", num1, "and", num2, "is:", sum(numbers_sequence))
+
+9. Write a program to read a number from user. Create and use a user defined function to check whether it is odd or even using R?
+Ans.
+check_odd_even <- function(number) {
+  if (number %% 2 == 0) {
+    return("even")
+  } else {
+    return("odd")
+  }
+}
+
+number <- as.numeric(readline(prompt = "Enter a number: "))
+result <- check_odd_even(number)
+cat("The number", number, "is", result)
+
